@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Help</title>
+  <style>
+    /* Reset and base */
+    body {
+      background-image: url('image/back.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keeps the background fixed while scrolling */
+      color: rgb(34, 101, 164);
+    }
+    a.back-button {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 10px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+    a.back-button:hover {
+      background-color: #0056b3;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 60px 20px 40px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+      margin-top: 0;
+    }
+    section.container {
+      max-width: 700px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+    section.container h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 8px;
+      font-weight: 700;
+      color: #007bff;
+    }
+    .faq {
+      background: white;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+    .faq:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .faq h5 {
+      margin: 0;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: #f1f1f1;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq h5::after {
+      content: '+';
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .faq.active h5::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+    .faq p {
+      padding: 0 20px 20px;
+      margin: 0;
+      line-height: 1.5;
+      display: none;
+      color: #555;
+      font-size: 1rem;
+    }
+    .faq.active p {
+      display: block;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -3px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section.container {
+        margin: 20px auto 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <a href="index.html" class="back-button" aria-label="Go back to homepage">Back</a>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Help & Support</h1>
+    <p>Find the answers to your questions here.</p>
+  </header>
+
+  <!-- FAQ Section -->
+  <section class="container" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq" tabindex="0">
+      <h5>How do I fill a legal form?</h5>
+      <p>You can easily fill out the form by visiting the Legal Form Filling section on our website.</p>
+    </div>
+
+    <div class="faq" tabindex="0">
+      <h5>How do I book a ticket?</h5>
+      <p>Simply go to the Ticket Booking section, select your preferred service, and follow the instructions.</p>
+    </div>
+
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Accordion behavior for FAQs
+    document.querySelectorAll('.faq').forEach(faq => {
+      faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+      });
+      faq.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          faq.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
