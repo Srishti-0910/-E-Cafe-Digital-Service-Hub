@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-Cafe: Your one-stop digital service hub for legal form filling, ticket booking, and print orders.">
+  <title>E-Cafe: Your Digital Service Hub</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styling */
+    body {
+      
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Hamburger Menu Styling */
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .line {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .hamburger:hover .line {
+      background-color: #00aaff;
+    }
+
+    /* Sliding Menu */
+    #menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #333333d1;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      z-index: 998;
+      padding-top: 50px;
+    }
+
+    #menu a {
+      margin: 20px 0;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    #menu a:hover {
+      color: #00aaff;
+    }
+
+    /* Active Menu (after clicking the hamburger) */
+    #menu.active {
+      left: 0;
+    }
+
+    /* Header Section */
+    header {
+      background-image: url('image/back.jpeg');
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 250px 190px;
+    }
+
+    /* Services Section */
+    #services {
+      background-color: #f9f9f9;
+      padding: 50px 20px;
+    }
+
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+      text-align: center;
+    }
+
+    .circle-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #eaf4ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .circle-icon i {
+      font-size: 2rem;
+      color: #007bff;
+    }
+
+    .icon-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- Sliding Menu -->
+  <div id="menu">
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
+    <a href="help.html">Help</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </div>
+
+  <!-- Header Section -->
+  <header bg-dark text-white text-center py-5>
+    <h1>Welcome to E-Cafe</h1>
+    <p>Your Digital Service Hub for legal forms, ticket bookings, print orders, and more!</p>
+    <a href="#services" class="btn btn-primary mt-4">Explore Our Services</a>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container text-center">
+      <h2 class="mb-5">Our Services</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="circle-icon">
+                <img src="image/form.png" alt="Legal Form Filling" class="icon-img">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h5 class="card-title">Legal Form Filling</h5>
+              <p class="card-text">Submit and fill your legal forms online easily.</p>
+              <a href="form-filling.html" class="btn btn-outline-primary">Get Started</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="circle-icon">
+                <img src="image/ticket.png" alt="Ticket Booking" class="icon-img">
+                <i class="fas fa-ticket-alt"></i>
+              </div>
+              <h5 class="card-title">Ticket Booking</h5>
+              <p class="card-text">Book travel tickets quickly and securely with us.</p>
+              <a href="ticket-booking.html" class="btn btn-outline-success">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="circle-icon">
+                <img src="image/print.jpg" alt="Print Orders" class="icon-img">
+                <i class="fas fa-print"></i>
+              </div>
+              <h5 class="card-title">Print Orders</h5>
+              <p class="card-text">Order prints and have them delivered to your door.</p>
+              <a href="print-orders.html" class="btn btn-outline-danger">Order Prints</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+    <p>Need assistance? <a href="mailto:support@e-cafe.com">Contact Support</a></p>
+  </footer>
+
+  <!-- FontAwesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
