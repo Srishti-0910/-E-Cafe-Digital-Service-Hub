@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account - E-Cafe</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-image: url('image/back.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keeps the background fixed while scrolling */
+      color: rgb(34, 101, 164);
+    }
+    header {
+      background-color: #343a40 !important;
+      position: relative;
+    }
+    header h1 {
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ced4da;
+    }
+    .btn-back {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+    .container {
+      max-width: 480px;
+      background: #fff;
+      padding: 30px 40px;
+      margin: 40px auto 80px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #212529;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: background-color 0.3s ease;
+    }
+    .btn-outline-primary:hover {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-outline-info:hover {
+      background-color: #17a2b8;
+      color: white;
+    }
+    .btn-outline-success:hover {
+      background-color: #28a745;
+      color: white;
+    }
+    .login-section {
+      margin-top: 20px;
+      display: none;
+      animation: fadeIn 0.3s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    footer {
+      background-color: #343a40;
+      color: #adb5bd;
+      padding: 18px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      font-size: 0.9rem;
+      text-align: center;
+      user-select: none;
+    }
+    hr {
+      border-top: 1px solid #dee2e6;
+      margin: 1.5rem 0;
+    }
+    p.or-text {
+      text-align: center;
+      font-weight: 500;
+      color: #6c757d;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="text-white text-center py-4">
+    <button onclick="history.back()" class="btn btn-light btn-back">Back</button>
+    <h1>E-Cafe Account</h1>
+    <p>Please fill in the required details below.</p>
+  </header>
+
+  <div class="container">
+    <h2>Login or Register</h2>
+    <p class="text-center">Please choose an option below:</p>
+
+    <div>
+      <button class="btn btn-outline-info btn-lg" onclick="showEmailInput()">Login with Email</button>
+    </div>
+
+    <!-- Email Login Section -->
+    <div id="emailLogin" class="login-section">
+      <h3>Enter your email</h3>
+      <input type="email" id="email" class="form-control my-3" placeholder="Enter your email" required />
+      <button class="btn btn-outline-success btn-block" onclick="submitEmail()">Submit</button>
+    </div>
+
+    <hr />
+    <p class="or-text">If not having an account</p>
+    <hr />
+
+    <hr />
+    <a href="registration.html" class="btn btn-outline-success btn-lg btn-block">Register</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Show Email Login and hide Facebook login form
+    function showEmailInput() {
+      document.getElementById('emailLogin').style.display = 'block';document.getElementById('facebookLogin').style.display = 'none';
+    }
+
+
+    function submitEmail() {
+      const email = document.getElementById('email').value.trim();
+      if (email) {
+        alert('Email submitted: ' + email);
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    }
+
+  </script>
+</body>
+</html>
