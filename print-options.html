@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Options</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Print Options</h1>
+  </header>
+  
+  <form id="printOptionsForm">
+    <div class="form-group">
+      <label for="optionType">Choose Print Option:</label>
+      <select id="optionType" required>
+        <option value="document">Document</option>
+        <option value="image">Image</option>
+      </select>
+    </div>
+    <button type="submit">Submit Options</button>
+  </form>
+
+  <div id="optionsConfirmation" style="display:none;"></div>
+  
+  <script src="print-options.js"></script>
+</body>
+</html>
