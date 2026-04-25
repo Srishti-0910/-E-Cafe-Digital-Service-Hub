@@ -1,0 +1,59 @@
+let registeredEmail = '';
+let registeredPassword = '';
+
+function toggleSignIn() {
+    const signinSection = document.getElementById('signin');
+    signinSection.style.display = signinSection.style.display === 'none' ? 'block' : 'none';
+}
+
+document.getElementById('signup-form').onsubmit = function(event) {
+    event.preventDefault();
+    registeredEmail = document.getElementById('signup-email').value;
+    registeredPassword = document.getElementById('signup-password').value;
+    showOptions(true);
+};
+
+document.getElementById('signin-form').onsubmit = function(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('signin-email').value;
+    const passwordInput = document.getElementById('signin-password').value;
+    showOptions(false, emailInput, passwordInput);
+};
+
+function showOptions(isSignUp, emailInput = '', passwordInput = '') {
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.style.display = 'none';
+
+    if (isSignUp) {
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = `
+            <h2>Welcome to E-Cafe!</h2>
+            <p>You have successfully signed up.</p>
+            <div class="options-container" style="display: block;">
+                <button class="option-button" onclick="openPrintoutPage()">Printout</button><br><br>
+                <button class="option-button" onclick="alert('Filling Legal Forms...')">Fill Legal Forms</button><br><br>
+                <button class="option-button" onclick="alert('Booking Tickets...')">Book Tickets</button><br><br>
+            </div>
+        `;
+    } else {
+        if (emailInput === registeredEmail && passwordInput === registeredPassword) {
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = `
+                <h2>Welcome back to E-Cafe!</h2>
+                <p>You have successfully signed in.</p>
+                <div class="options-container" style="display: block;">
+                    <button class="option-button" onclick="openPrintoutPage()">Printout</button><br><br>
+                    <button class="option-button" onclick="alert('Filling Legal Forms...')">Fill Legal Forms</button><br><br>
+                    <button class="option-button" onclick="alert('Booking Tickets...')">Book Tickets</button><br><br>
+                </div>
+            `;
+        } else {
+            errorMessage.style.display = 'block';
+            errorMessage.textContent = "Invalid email or password. Please try again.";
+        }
+    }
+}
+
+function openPrintoutPage() {
+    window.location.href = "printout.html"; // Redirect to the printout page
+}
