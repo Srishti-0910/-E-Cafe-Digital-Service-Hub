@@ -1,0 +1,157 @@
+/* Background for the entire site */
+body {
+  background-image: url('image/back.jpeg'); /* Replace with your actual image filename */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  color: rgb(34, 101, 164);
+}
+
+header {
+  background-color: rgb(61, 237, 208) !important; /* Ensure this takes precedence */
+}
+
+.py-5 {
+padding-bottom: 17rem;
+background-color: rgba(153, 152, 152, 0.781) ;
+}
+
+.py-5 {
+padding-top: 17rem;
+}
+
+.bg-dark {
+background-image: url('image/back.jpeg');
+background-position: center;
+background-size:cover;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 2rem;
+}
+
+/* Services Section Styling */
+section#services {
+  background-color: rgba(153, 152, 152, 0.781); /* White with transparency for content readability */
+  color: #1e667c;
+  padding: 50px 0;
+}
+
+.container text-center{
+  padding-top: 50px 60px;
+}
+.card {
+  margin-bottom: 10px;
+}
+
+.card-body {
+  padding: 50px 60px;
+}
+
+.card-title {
+  color: #007bff;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #257acf;
+  color: #ccc;
+}
+/* Custom styles for the form page */
+#form-filling {
+  background-color: rgba(209, 246, 245, 0.9);
+  color: #000000;
+  padding: 60px 0;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form .form-group label {
+  font-weight: bold;
+}
+
+form button {
+  background-color: #13bcde;
+  border-color: #00c8ff;
+}
+
+form button:hover {
+  background-color: #09f5e5;
+  border-color: #0eb034;
+}
+
+/* Ensuring visibility for the UploadCard text */
+.UploadCard__Info-sc-155yhmb-3, 
+.UploadCard__Title-sc-155yhmb-6, 
+.UploadCard__SubTitle-sc-155yhmb-7, 
+.UploadCard__InfoText-sc-155yhmb-0 {
+  color: #333; /* Darker color for better contrast */
+}
+
+.UploadCard__Button-sc-155yhmb-4 {
+  background-color: #007bff;
+  color: rgba(0, 0, 0, 0.948); /* Button text color */
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.UploadCard__Button-sc-155yhmb-4:hover {
+  background-color: #0056b3;
+}
+
+/* General form styling */
+.form-control {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 1em;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #0390bb;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+  background-color: #88def4;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Valid input styling */
+.form-control.valid {
+  border-color: #28a745;
+}
+
+/* Invalid input styling */
+.form-control.invalid {
+  border-color: #dc3545;
+}
+
+/* Styling for error messages */
+.error-message {
+  color: #dc3545;
+  font-size: 0.9em;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
