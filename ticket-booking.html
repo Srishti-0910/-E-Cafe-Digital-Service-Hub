@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Cafe: Your Digital Service Hub</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    /* Header Styles */
+   
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    /* Card Enhancements */
+    .card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .card img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .btn-outline-primary {
+      border-width: 2px;
+      font-weight: bold;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .card img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="bg-dark text-white text-center py-4">
+    <button onclick="history.back()" class="btn btn-light position-absolute" style="top: 10px; left: 10px;">Back</button>
+    <h1>Ticket Booking Service</h1>
+    <p>Your gateway to convenient ticket reservations.</p>
+  </header>
+
+  <!-- Ticket Booking Section -->
+  <section class="py-5">
+    <div class="container">
+      <center><h2>Ticket Booking</h2></center>
+      <div class="row">
+        <!-- Train Ticket Booking -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="image/train.jpeg" alt="Train Ticket Booking" class="card-img-top">
+            <div class="card-body text-center">
+              <h4 class="card-title text-primary">Train Ticket Booking</h4>
+              <p class="card-text">Book train tickets with ease and convenience.</p>
+              <a href="https://www.irctc.co.in/" target="_blank" class="btn btn-outline-primary">Book Train Ticket</a>
+            </div>
+          </div>
+        </div>
+        <!-- Flight Ticket Booking -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="image/flight.webp" alt="Flight Ticket Booking" class="card-img-top">
+            <div class="card-body text-center">
+              <h4 class="card-title text-primary">Flight Ticket Booking</h4>
+              <p class="card-text">Get your flight tickets at competitive rates.</p>
+              <a href="https://www.makemytrip.com/flights/" target="_blank" class="btn btn-outline-primary">Book Flight Ticket</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Bus Ticket Booking -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="image/bus.webp" alt="Bus Ticket Booking" class="card-img-top">
+            <div class="card-body text-center">
+              <h4 class="card-title text-primary">Bus Ticket Booking</h4>
+              <p class="card-text">Reserve your bus seats quickly and easily.</p>
+              <a href="https://www.redbus.in/" target="_blank" class="btn btn-outline-primary">Book Bus Ticket</a>
+            </div>
+          </div>
+        </div>
+        <!-- Movie Ticket Booking -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="image/movie.jpg" alt="Movie Ticket Booking" class="card-img-top">
+            <div class="card-body text-center">
+              <h4 class="card-title text-primary">Movie Ticket Booking</h4>
+              <p class="card-text">Enjoy movies with hassle-free ticket bookings.</p>
+              <a href="https://www.bookmyshow.com/" target="_blank" class="btn btn-outline-primary">Book Movie Ticket</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 <strong>E-Cafe: Your Digital Service Hub</strong>. All Rights Reserved.</p>
+    <p>Need assistance? <a href="mailto:support@e-cafe.com">Contact Support</a></p>
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
