@@ -1,0 +1,78 @@
+const dragDropArea = document.getElementById('drag-drop-area');
+const fileInput = document.getElementById('file-upload');
+const printButton = document.getElementById('print-button');
+let selectedFile; // Variable to hold the selected file
+
+// Drag and Drop functionality
+dragDropArea.addEventListener('click', () => {
+    fileInput.click(); // Trigger file input on area click
+});
+
+dragDropArea.addEventListener('dragover', (event) => {
+    event.preventDefault(); // Prevent default behavior
+    dragDropArea.classList.add('hover'); // Add hover effect
+});
+
+dragDropArea.addEventListener('dragleave', () => {
+    dragDropArea.classList.remove('hover'); // Remove hover effect
+});
+
+dragDropArea.addEventListener('drop', (event) => {
+    event.preventDefault();
+    dragDropArea.classList.remove('hover'); // Remove hover effect
+
+    const files = event.dataTransfer.files;
+    if (files.length > 0) {
+        fileInput.files = files; // Set the file input's files to the dropped files
+        selectedFile = files[0]; // Store the selected file
+    }
+});
+
+// Handle form submission
+document.getElementById('printout-form').onsubmit = function(event) {
+    event.preventDefault();
+    selectedFile = fileInput.files[0]; // Get the selected file
+    const fileType = document.getElementById('file-type').value;
+    const colorOption = document.getElementById('color-option').value;
+    const printoutMessage = document.getElementById('printout-message');
+
+    printoutMessage.textContent = `You have selected to print a ${fileType} in ${colorOption.replace('-', ' ')} mode!`;
+
+    // Show the print button
+    printButton.style.display = 'inline-block';
+};
+
+// Print function
+printButton.onclick = function() {
+    if (selectedFile) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            const newWindow = window.open('', '_blank'); // Open a new window
+            newWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Print</title>
+                    </head>
+                    <body>
+                        <iframe src="${e.target.result}" style="width:100%; height:100%;" frameborder="0"></iframe>
+                    </body>
+                </html>
+            `);
+            newWindow.document.close();
+            newWindow.focus();
+            newWindow.onload = function() {
+                newWindow.print(); // Open the print dialog after the content is loaded
+            };
+        };
+        
+        // Read the selected file as a Data URL (this works for images and PDFs)
+        if (selectedFile.type === 'application/pdf' || selectedFile.type.startsWith('image/')) {
+            reader.readAsDataURL(selectedFile);
+        } else {
+            alert('Only PDF or image files can be printed directly.');
+        }
+    } else {
+        alert('No file selected for printing.');
+    }
+};
