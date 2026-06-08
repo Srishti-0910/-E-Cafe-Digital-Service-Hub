@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-Cafe: Your one-stop digital service hub for legal form filling, ticket booking, and print orders.">
+  <title>E-Cafe: Your Digital Service Hub</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styling */
+    body {
+      
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Hamburger Menu Styling */
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .line {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .hamburger:hover .line {
+      background-color: #00aaff;
+    }
+
+    /* Sliding Menu */
+    #menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #333333d1;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      z-index: 998;
+      padding-top: 50px;
+    }
+
+    #menu a {
+      margin: 20px 0;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    #menu a:hover {
+      color: #00aaff;
+    }
+
+    /* Active Menu (after clicking the hamburger) */
+    #menu.active {
+      left: 0;
+    }
+
+    /* Header Section */
+    header {
+      background-image: url('image/back.jpeg');
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 250px 190px;
+    }
+
+    /* Services Section */
+    #services {
+      background-color: #f9f9f9;
+      padding: 50px 20px;
+    }
+
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+      text-align: center;
+    }
+
+    .circle-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #eaf4ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .circle-icon i {
+      font-size: 2rem;
+      color: #007bff;
+    }
+
+    .icon-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- Sliding Menu -->
+  <div id="menu">
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
+    <a href="help.html">Help</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </div>
+
+  <!-- Header Section -->
+  <header bg-dark text-white text-center py-5>
+    <h1>Welcome to E-Cafe</h1>
+    <p>Your Digital Service Hub for legal forms, ticket bookings, print orders, and more!</p>
+    <a href="#services" class="btn btn-primary mt-4">Explore Our Services</a>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container text-center">
+      <h2 class="mb-5">Our Services</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="circle-icon">
+                <img src="form.png" alt="Legal Form Filling" class="icon-img">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h5 class="card-title">Legal Form Filling</h5>
+              <p class="card-text">Submit and fill your legal forms online easily.</p>
+              <a href="form-filling.html" class="btn btn-outline-primary">Get Started</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="circle-icon">
+                <img src="ticket.png" alt="Ticket Booking" class="icon-img">
+                <i class="fas fa-ticket-alt"></i>
+              </div>
+              <h5 class="card-title">Ticket Booking</h5>
+              <p class="card-text">Book travel tickets quickly and securely with us.</p>
+              <a href="ticket-booking.html" class="btn btn-outline-success">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="circle-icon">
+                <img src="print.jpg.jpeg" alt="Print Orders" class="icon-img">
+                <i class="fas fa-print"></i>
+              </div>
+              <h5 class="card-title">Print Orders</h5>
+              <p class="card-text">Order prints and have them delivered to your door.</p>
+              <a href="print-orders.html" class="btn btn-outline-danger">Order Prints</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+    <p>Need assistance? <a href="mailto:support@e-cafe.com">Contact Support</a></p>
+  </footer>
+
+  <!-- FontAwesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account - E-Cafe</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-image: url('image/back.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keeps the background fixed while scrolling */
+      color: rgb(34, 101, 164);
+    }
+    header {
+      background-color: #343a40 !important;
+      position: relative;
+    }
+    header h1 {
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ced4da;
+    }
+    .btn-back {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+    .container {
+      max-width: 480px;
+      background: #fff;
+      padding: 30px 40px;
+      margin: 40px auto 80px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #212529;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: background-color 0.3s ease;
+    }
+    .btn-outline-primary:hover {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-outline-info:hover {
+      background-color: #17a2b8;
+      color: white;
+    }
+    .btn-outline-success:hover {
+      background-color: #28a745;
+      color: white;
+    }
+    .login-section {
+      margin-top: 20px;
+      display: none;
+      animation: fadeIn 0.3s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    footer {
+      background-color: #343a40;
+      color: #adb5bd;
+      padding: 18px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      font-size: 0.9rem;
+      text-align: center;
+      user-select: none;
+    }
+    hr {
+      border-top: 1px solid #dee2e6;
+      margin: 1.5rem 0;
+    }
+    p.or-text {
+      text-align: center;
+      font-weight: 500;
+      color: #6c757d;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="text-white text-center py-4">
+    <button onclick="history.back()" class="btn btn-light btn-back">Back</button>
+    <h1>E-Cafe Account</h1>
+    <p>Please fill in the required details below.</p>
+  </header>
+
+  <div class="container">
+    <h2>Login or Register</h2>
+    <p class="text-center">Please choose an option below:</p>
+
+    <div>
+      <button class="btn btn-outline-info btn-lg" onclick="showEmailInput()">Login with Email</button>
+    </div>
+
+    <!-- Email Login Section -->
+    <div id="emailLogin" class="login-section">
+      <h3>Enter your email</h3>
+      <input type="email" id="email" class="form-control my-3" placeholder="Enter your email" required />
+      <button class="btn btn-outline-success btn-block" onclick="submitEmail()">Submit</button>
+    </div>
+
+    <hr />
+    <p class="or-text">If not having an account</p>
+    <hr />
+
+    <hr />
+    <a href="registration.html" class="btn btn-outline-success btn-lg btn-block">Register</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Show Email Login and hide Facebook login form
+    function showEmailInput() {
+      document.getElementById('emailLogin').style.display = 'block';document.getElementById('facebookLogin').style.display = 'none';
+    }
+
+
+    function submitEmail() {
+      const email = document.getElementById('email').value.trim();
+      if (email) {
+        alert('Email submitted: ' + email);
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    }
+
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - E-Cafe</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+    }
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+      z-index: 999;
+      text-decoration: none;
+    }
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+    header {
+      background: linear-gradient(135deg, #343a40, #495057);
+    }
+    header h1 {
+      font-size: 3rem;
+    }
+    section.container {
+      background-color: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      margin-top: -40px;
+      z-index: 1;
+      position: relative;
+    }
+    .form-group label {
+      font-weight: 600;
+    }
+    .btn-primary {
+      padding: 10px 25px;
+      border-radius: 30px;
+    }
+    footer {
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-button">Back</a>
+
+  <!-- Header Section -->
+  <header class="text-white text-center py-5">
+    <h1>Contact Us</h1>
+    <p class="lead">We're here to help. Reach out to us!</p>
+  </header>
+
+  <!-- Contact Form Section -->
+  <section class="container my-5">
+    <h2 class="mb-4 text-center">Get in Touch</h2>
+    <form action="#" method="POST">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" class="form-control" required placeholder="Enter your full name"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" required placeholder="you@example.com"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" class="form-control" rows="5" required placeholder="Write your message here..."></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p class="mb-0">&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Cafe: Form Filling Service</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="bg-dark text-white text-center py-4 position-relative">
+    <button onclick="history.back()" class="btn btn-light position-absolute" style="top: 10px; left: 10px;">Back</button>
+    <h1>Form Filling Service</h1>
+    <p class="lead">Please fill in the required details below.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Instructions Section -->
+    <section id="instructions" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">How to Use</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2"><strong>Step 1:</strong> Click on the name of the form you want to fill.</li>
+          <li class="mb-2"><strong>Step 2:</strong> Fill out the selected form.</li>
+          <li class="mb-2"><strong>Step 3:</strong> Download it from their site.</li>
+          <li class="mb-2"><strong>Step 4:</strong> To print, visit the home page, navigate to the print orders page, upload your file, and place your print order.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Government Forms Links -->
+    <section id="government-forms" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Government Forms</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="https://passportindia.gov.in/" target="_blank" class="btn btn-link">Passport Application</a></li>
+          <li class="list-group-item"><a href="https://parivahan.gov.in/parivahan/" target="_blank" class="btn btn-link">Driving License Application</a></li>
+          <li class="list-group-item"><a href="https://uidai.gov.in/" target="_blank" class="btn btn-link">Aadhaar Card Application</a></li>
+          <li class="list-group-item"><a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" class="btn btn-link">PAN Card Application</a></li>
+          <li class="list-group-item"><a href="https://jeemain.nta.nic.in/" target="_blank" class="btn btn-link">JEE Main Application</a></li>
+          <li class="list-group-item"><a href="https://jeeadv.ac.in/" target="_blank" class="btn btn-link">JEE Advanced Application</a></li>
+          <li class="list-group-item"><a href="https://neet.nta.nic.in/" target="_blank" class="btn btn-link">NEET Application</a></li>
+          <li class="list-group-item"><a href="https://scholarships.gov.in/" target="_blank" class="btn btn-link">India Legal Scholarships</a></li>
+          <li class="list-group-item"><a href="https://scholarship.up.gov.in/" target="_blank" class="btn btn-link">UP Scholarships</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Legal Bank Forms -->
+    <section id="bank-forms" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Legal Bank Forms</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="https://www.sbi.co.in/web/home" target="_blank" class="btn btn-link">State Bank of India</a></li>
+          <li class="list-group-item"><a href="https://www.bankofbaroda.in/" target="_blank" class="btn btn-link">Bank of Baroda</a></li>
+          <li class="list-group-item"><a href="https://www.unionbankofindia.co.in/" target="_blank" class="btn btn-link">Union Bank</a></li>
+          <li class="list-group-item"><a href="https://www.pnbindia.in/" target="_blank" class="btn btn-link">Punjab National Bank</a></li>
+          <li class="list-group-item"><a href="https://www.hdfcbank.com/" target="_blank" class="btn btn-link">HDFC</a></li>
+          <li class="list-group-item"><a href="https://www.policybazaar.com/" target="_blank" class="btn btn-link">Policybazaar Form</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="form-script.js"></script>
+
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Cafe: Your Digital Service Hub</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    /* Header Styles */
+   
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    /* Card Enhancements */
+    .card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .card img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .btn-outline-primary {
+      border-width: 2px;
+      font-weight: bold;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .card img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="bg-dark text-white text-center py-4">
+    <button onclick="history.back()" class="btn btn-light position-absolute" style="top: 10px; left: 10px;">Back</button>
+    <h1>Ticket Booking Service</h1>
+    <p>Your gateway to convenient ticket reservations.</p>
+  </header>
+
+  <!-- Ticket Booking Section -->
+  <section class="py-5">
+    <div class="container">
+      <center><h2>Ticket Booking</h2></center>
+      <div class="row">
+        <!-- Train Ticket Booking -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="image/train.jpeg" alt="Train Ticket Booking" class="card-img-top">
+            <div class="card-body text-center">
+              <h4 class="card-title text-primary">Train Ticket Booking</h4>
+              <p class="card-text">Book train tickets with ease and convenience.</p>
+              <a href="https://www.irctc.co.in/" target="_blank" class="btn btn-outline-primary">Book Train Ticket</a>
+            </div>
+          </div>
+        </div>
+        <!-- Flight Ticket Booking -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="image/flight.webp" alt="Flight Ticket Booking" class="card-img-top">
+            <div class="card-body text-center">
+              <h4 class="card-title text-primary">Flight Ticket Booking</h4>
+              <p class="card-text">Get your flight tickets at competitive rates.</p>
+              <a href="https://www.makemytrip.com/flights/" target="_blank" class="btn btn-outline-primary">Book Flight Ticket</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Bus Ticket Booking -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="image/bus.webp" alt="Bus Ticket Booking" class="card-img-top">
+            <div class="card-body text-center">
+              <h4 class="card-title text-primary">Bus Ticket Booking</h4>
+              <p class="card-text">Reserve your bus seats quickly and easily.</p>
+              <a href="https://www.redbus.in/" target="_blank" class="btn btn-outline-primary">Book Bus Ticket</a>
+            </div>
+          </div>
+        </div>
+        <!-- Movie Ticket Booking -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="image/movie.jpg" alt="Movie Ticket Booking" class="card-img-top">
+            <div class="card-body text-center">
+              <h4 class="card-title text-primary">Movie Ticket Booking</h4>
+              <p class="card-text">Enjoy movies with hassle-free ticket bookings.</p>
+              <a href="https://www.bookmyshow.com/" target="_blank" class="btn btn-outline-primary">Book Movie Ticket</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 <strong>E-Cafe: Your Digital Service Hub</strong>. All Rights Reserved.</p>
+    <p>Need assistance? <a href="mailto:support@e-cafe.com">Contact Support</a></p>
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Orders</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background-color: #343a40dc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #confirmation {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #007bff;
+      border-radius: 5px;
+      background-color: #e9f7fd;
+      display: none;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+    }
+
+    .delete-btn:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Header Section -->
+ <header class="bg-dark text-white text-center py-4">
+    <button onclick="history.back()" class="btn btn-light position-absolute" style="width: 4.4%; height:5.5%; top: 0px; left: 2px;">Back</button>
+    <h1>Printing Service</h1>
+    <p>Please fill in the required details below.</p>
+  </header>
+  
+<section class="py-5">
+  <div class="container">
+    <form id="printOrderForm">
+      <div class="form-group">
+        <label for="documentType">Document Type:</label>
+        <select id="documentType" class="form-control" required>
+          <option value="blackWhite">Black & White</option>
+          <option value="color">Color</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="numPages">Number of Pages:</label>
+        <input type="number" id="numPages" class="form-control" required min="1" placeholder="Enter number of pages">
+      </div>
+      <div class="form-group">
+        <label for="fileUpload">Upload File:</label>
+        <input type="file" id="fileUpload" class="form-control" required>
+      </div>
+      <button type="button" id="submitOrder">Submit Order</button>
+    </form>
+
+    <div id="orderSummary" style="display: none;">
+      <h3>Order Summary</h3>
+      <ul id="orderDetails"></ul>
+      <button type="button" id="paymenttype">Proceed to Payment</button>
+    </div>
+
+    <div id="confirmation"></div>
+  </div>
+</section>
+  <script>
+    document.getElementById('submitOrder').addEventListener('click', function() {
+      const documentType = document.getElementById('documentType').value;
+      const numPages = document.getElementById('numPages').value;
+      const fileUpload = document.getElementById('fileUpload').files[0];
+
+      if (!fileUpload) {
+        alert('Please upload a file.');
+        return;
+      }
+
+      const pricePerPage = documentType === 'color' ? 5 : 2;
+      const totalPrice = numPages * pricePerPage;
+
+      const orderDetails = document.getElementById('orderDetails');
+      orderDetails.innerHTML = `
+        <li><strong>Document Type:</strong> ${documentType === 'color' ? 'Color' : 'Black & White'}</li>
+        <li><strong>Number of Pages:</strong> ${numPages}</li>
+        <li><strong>Total Price:</strong> ₹${totalPrice}</li>
+      `;
+
+      document.getElementById('orderSummary').style.display = 'block';
+    });
+
+    document.getElementById('paymenttype').addEventListener('click', function() {
+      window.location.href = 'confirm-order.html';
+    });
+  </script>
+</body>
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-4">
+<p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+<p>Need assistance? <a href="mailto:support@e-cafe.com">Contact Support</a></p>
+</footer>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Options</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Print Options</h1>
+  </header>
+  
+  <form id="printOptionsForm">
+    <div class="form-group">
+      <label for="optionType">Choose Print Option:</label>
+      <select id="optionType" required>
+        <option value="document">Document</option>
+        <option value="image">Image</option>
+      </select>
+    </div>
+    <button type="submit">Submit Options</button>
+  </form>
+
+  <div id="optionsConfirmation" style="display:none;"></div>
+  
+  <script src="print-options.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register - E-Cafe</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-image: url('image/back.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keeps the background fixed while scrolling */
+      color: rgb(34, 101, 164);
+    }
+    header {
+      background-color: #474e54 !important;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+    }
+    .btn-back {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+    .container {
+      max-width: 480px;
+      background: #fff;
+      padding: 30px 40px;
+      margin: 40px auto 80px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #212529;
+    }
+    .form-group label {
+      font-weight: 600;
+    }
+    footer {
+      background-color: #343a40;
+      color: #adb5bd;
+      padding: 18px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      font-size: 0.9rem;
+      text-align: center;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button onclick="history.back()" class="btn btn-light btn-back">Back</button>
+    <h1>E-Cafe Registration</h1>
+  </header>
+
+  <div class="container">
+    <h2>Create Your Account</h2>
+    <form id="registrationForm" novalidate>
+      <div class="form-group">
+        <label for="fullName">Full Name<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required />
+        <div class="invalid-feedback">Please enter your full name.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address<span class="text-danger">*</span></label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password<span class="text-danger">*</span></label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" required />
+        <small class="form-text text-muted">
+          Must be at least 6 characters and include uppercase, lowercase, number, and special character.
+        </small>
+        <div class="invalid-feedback" id="passwordFeedback">
+          Password must be at least 6 characters and include uppercase, lowercase, number, and special character.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password<span class="text-danger">*</span></label>
+        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required />
+        <div class="invalid-feedback" id="confirmPasswordFeedback">Passwords do not match.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number (optional)</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" />
+      </div>
+
+      <button type="submit" class="btn btn-success btn-block btn-lg">Register</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const form = document.getElementById('registrationForm');
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirmPassword');
+
+      // Password regex:
+      // (?=.*[a-z]) - at least one lowercase letter
+      // (?=.*[A-Z]) - at least one uppercase letter
+      // (?=.*\d)   - at least one digit
+      // (?=.*[\W_]) - at least one special char (non-word character)
+      // .{6,}      - at least 6 characters long
+      const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Reset custom validity messages
+        confirmPassword.setCustomValidity('');
+        password.setCustomValidity('');
+
+        // Validate password pattern
+        if (!passwordPattern.test(password.value)) {
+          password.setCustomValidity('Invalid');
+        }
+
+        // Check built-in form validity
+        if (form.checkValidity() === false) {
+          event.stopPropagation();
+          form.classList.add('was-validated');
+          return;
+        }
+
+        // Check if passwords match
+        if (password.value !== confirmPassword.value) {
+          confirmPassword.setCustomValidity('Passwords do not match');
+          form.classList.add('was-validated');
+          return;
+        }
+
+        // If everything is valid
+        alert('Registration successful!\nWelcome, ' + document.getElementById('fullName').value + '!');
+        form.reset();
+        form.classList.remove('was-validated');
+      }, false);
+    })();
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Help</title>
+  <style>
+    /* Reset and base */
+    body {
+      background-image: url('image/back.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keeps the background fixed while scrolling */
+      color: rgb(34, 101, 164);
+    }
+    a.back-button {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 10px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+    a.back-button:hover {
+      background-color: #0056b3;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 60px 20px 40px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+      margin-top: 0;
+    }
+    section.container {
+      max-width: 700px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+    section.container h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 8px;
+      font-weight: 700;
+      color: #007bff;
+    }
+    .faq {
+      background: white;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+    .faq:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .faq h5 {
+      margin: 0;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: #f1f1f1;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq h5::after {
+      content: '+';
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .faq.active h5::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+    .faq p {
+      padding: 0 20px 20px;
+      margin: 0;
+      line-height: 1.5;
+      display: none;
+      color: #555;
+      font-size: 1rem;
+    }
+    .faq.active p {
+      display: block;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -3px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section.container {
+        margin: 20px auto 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <a href="index.html" class="back-button" aria-label="Go back to homepage">Back</a>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Help & Support</h1>
+    <p>Find the answers to your questions here.</p>
+  </header>
+
+  <!-- FAQ Section -->
+  <section class="container" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq" tabindex="0">
+      <h5>How do I fill a legal form?</h5>
+      <p>You can easily fill out the form by visiting the Legal Form Filling section on our website.</p>
+    </div>
+
+    <div class="faq" tabindex="0">
+      <h5>How do I book a ticket?</h5>
+      <p>Simply go to the Ticket Booking section, select your preferred service, and follow the instructions.</p>
+    </div>
+
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Accordion behavior for FAQs
+    document.querySelectorAll('.faq').forEach(faq => {
+      faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+      });
+      faq.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          faq.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - E-Cafe</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    button.btn-light.position-absolute {
+      top: 12px;
+      left: 12px;
+      z-index: 20;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    button.btn-light.position-absolute:hover {
+      background-color: #e2e6ea;
+    }
+    .container {
+      max-width: 720px;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 60px;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-weight: 700;
+      color: #007bff;
+    }
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #0056b3;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+    footer {
+      background-color: #222;
+      color: #ccc;
+      font-size: 0.9rem;
+      box-shadow: 0 -3px 6px rgba(0,0,0,0.3);
+      position: relative;
+      padding: 20px 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="bg-dark text-white text-center py-4">
+    <button onclick="history.back()" class="btn btn-light position-absolute" aria-label="Go back">Back
+    </button>
+    <h1>Privacy Policy</h1>
+  </header>
+
+  <!-- Privacy Policy Content Section -->
+  <div class="container my-5">
+    <h2>Privacy Policy for E-Cafe</h2>
+    <p>At E-Cafe, accessible from [your domain], one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by E-Cafe and how we use it.</p>
+
+    <h3>Information We Collect</h3>
+    <p>We collect various types of information to provide and improve our services for you. This includes personal data, usage data, and cookies.</p>
+
+    <h3>How We Use Your Information</h3>
+    <p>Your information is used to improve our website's functionality, provide customer support, and send marketing communications (if opted in).</p>
+
+    <h3>Cookies</h3>
+    <p>We use cookies to enhance your experience on our website. Cookies are small files that are stored on your device when you visit our site.</p>
+
+    <h3>Your Data Protection Rights</h3>
+    <p>You have the right to access, update, or delete your personal information. To do so, please contact us directly.</p>
+
+    <h3>Third-Party Links</h3>
+    <p>Our website may contain links to third-party websites. We are not responsible for the content or privacy practices of these websites.</p>
+
+    <h3>Changes to This Privacy Policy</h3>
+    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+    <h3>Contact Us</h3>
+    <p>If you have any questions or concerns about our Privacy Policy, please contact us at:</p>
+    <p><strong>Email:</strong> support@ecafe.com</p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="text-center">
+    <p>&copy; 2024 E-Cafe: Your Digital Service Hub. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
